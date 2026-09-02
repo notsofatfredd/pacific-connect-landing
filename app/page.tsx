@@ -2,23 +2,66 @@ const email = 'Info@pacificconnect.co.za';
 const intakeHref = 'mailto:Info@pacificconnect.co.za?subject=Request%20for%20a%20confidential%20assessment&body=Hello%20Pacific%20Connect%2C%0A%0AI%20would%20like%20to%20enquire%20about%3A%0A%0ABrief%20description%20of%20my%20matter%3A%0A%0AThank%20you.';
 
 const services = [
-  ['01', 'Debt review removals', 'A route back to a clearer credit position.'],
-  ['02', 'Debt mediation', 'Practical conversations with creditors.'],
-  ['03', 'Judgement removals', 'Assess the record. Understand the route.'],
-  ['04', 'Prescribed debt', 'Check whether older debt still applies.'],
-  ['05', 'Credit investigations', 'Find the facts behind your credit report.'],
-  ['06', 'Reckless lending', 'Review the circumstances behind lending.'],
+  ['01', 'Debt review removals', 'A clearer view of the route available around your debt review status.'],
+  ['02', 'Debt mediation', 'A considered look at more manageable repayment arrangements.'],
+  ['03', 'Judgement removals', 'Understand the matter recorded against your name and the route to assess it.'],
+  ['04', 'Prescribed debt assessments', 'Review whether older debt may still apply in your circumstances.'],
+  ['05', 'Credit report investigations', 'Find the facts behind what appears on your credit report.'],
+  ['06', 'Reckless lending assessments', 'Examine the circumstances around a lending decision.'],
 ];
 
 export default function Home() {
   return <main>
-    <header className="site-header"><a className="brand" href="#top" aria-label="Pacific Connect home"><img src="/logo-wordmark-transparent.png" alt="Pacific Connect" className="brand-lockup" /></a><nav><a href="#services">Services</a><a href="#contact">Start a conversation <span aria-hidden="true">↗</span></a></nav></header>
-    <section className="hero" id="top"><div className="hero-copy"><p className="kicker">PACIFIC CONNECT / PRIVATE INTAKE</p><h1>Clarity is a <em>better</em> place to start.</h1><p className="hero-lede">Understand your debt and credit position. See the route in front of you. Take the next step with practical guidance.</p><a className="button button-light" href={intakeHref}>Email for an assessment <span aria-hidden="true">↗</span></a><p className="hero-note">One confidential first conversation. Every matter is assessed individually.</p></div><div className="hero-visual" aria-hidden="true"><div className="visual-grid" /><img src="/logo-mark-transparent.png" alt="" /><div className="visual-caption"><span>PC / 01</span><strong>Connected thinking.</strong></div></div><div className="hero-index">01 <span>of</span> 04</div></section>
-    <section className="statement"><p className="kicker">THE PACIFIC APPROACH</p><h2>Less noise.<br /><span>More next steps.</span></h2><p>Debt and credit decisions are personal. We make the route easier to understand, so you can move forward with better information.</p></section>
-    <section className="services section" id="services"><div className="section-intro"><p className="kicker">WHAT WE CAN HELP WITH</p><h2>Find the right<br /><i>route.</i></h2><p>Start with a short outline. We will assess which service may fit your circumstances and explain what comes next.</p></div><div className="service-grid">{services.map(([number, title, copy]) => <article className="service-card" key={number}><span className="service-number">{number}</span><h3>{title}</h3><p>{copy}</p><span className="service-arrow" aria-hidden="true">↗</span></article>)}</div></section>
-    <section className="process section"><div className="process-heading"><p className="kicker">HOW IT STARTS</p><h2>A considered<br /><i>first move.</i></h2></div><div className="process-steps"><div><span>01</span><h3>Send a short outline.</h3><p>Tell us what you are dealing with, without sending sensitive documents in your first email.</p></div><div><span>02</span><h3>We assess the route.</h3><p>Your matter is reviewed individually and the relevant service path is explained plainly.</p></div><div><span>03</span><h3>You see the next step.</h3><p>Move forward with a clearer understanding of the information and action required.</p></div></div></section>
-    <section className="relief"><div className="relief-number"><span>UP TO</span><strong>60%</strong></div><div><p className="kicker">DEBT MEDIATION</p><h2>Possible repayment relief, assessed for your circumstances.</h2><p>Monthly debt repayments may be reduced by up to 60%, depending on your financial situation and the agreement reached with creditors.</p><p className="fine-print">This is not a service fee or a guaranteed result. A specific reduction or outcome cannot be guaranteed.</p></div></section>
-    <section className="contact section" id="contact"><div className="contact-copy"><p className="kicker">START WITH AN EMAIL</p><h2>Tell us where<br /><i>you are.</i></h2><p>Use the form to prepare an enquiry, or write directly to <a href={`mailto:${email}`}>{email}</a>.</p><p className="privacy-note">Please do not send identity numbers, banking details or full documents in your first email.</p></div><form className="lead-form" action={`mailto:${email}`} method="post" encType="text/plain"><label htmlFor="name">Your name</label><input id="name" name="name" type="text" autoComplete="name" required /><label htmlFor="email">Your email address</label><input id="email" name="email" type="email" autoComplete="email" required /><label htmlFor="message">How can we help?</label><textarea id="message" name="message" rows={5} required /><button className="button button-red" type="submit">Prepare email enquiry <span aria-hidden="true">↗</span></button></form></section>
-    <footer className="site-footer"><img src="/logo-wordmark-transparent.png" alt="Pacific Connect" /><span>Clear advice. Better choices. Brighter futures.</span><a href="#top">Back to top ↑</a></footer>
+    <header className="site-header">
+      <a className="brand" href="#top" aria-label="Pacific Connect home"><img src="/logo-wordmark-transparent.png" alt="Pacific Connect" /></a>
+      <div className="header-status"><span className="status-dot" /> Private intake <span className="header-divider" /> <a href={intakeHref}>Email us</a></div>
+    </header>
+
+    <section className="hero" id="top">
+      <div className="hero-orbit" aria-hidden="true"><span /><span /><span /></div>
+      <div className="hero-copy">
+        <p className="eyebrow">PACIFIC CONNECT <span>/</span> CREDIT &amp; DEBT MATTERS</p>
+        <h1>Make room<br />for a <i>clearer</i><br />next step.</h1>
+        <p className="hero-intro">A considered assessment of the matter in front of you—so the route ahead is easier to understand.</p>
+        <a className="hero-action" href={intakeHref}><span>Begin with an email</span><b aria-hidden="true">↗</b></a>
+        <p className="hero-footnote">Every matter is assessed individually.</p>
+      </div>
+      <div className="hero-art" aria-hidden="true">
+        <div className="art-label">A PRIVATE ROUTE<br /><strong>01—06</strong></div>
+        <div className="art-disc" />
+        <img src="/logo-mark-transparent.png" alt="" />
+        <div className="art-caption"><span>THE FIRST MOVE</span><strong>Start with<br />what you know.</strong></div>
+        <div className="art-line" />
+      </div>
+      <div className="hero-scroll"><span>Scroll to understand</span><i /></div>
+    </section>
+
+    <section className="signal-strip" aria-label="Pacific Connect approach">
+      <span>INDIVIDUAL ASSESSMENT</span><b>✳</b><span>DOCUMENT-LED REVIEW</span><b>✳</b><span>CLEAR NEXT STEPS</span><b>✳</b><span>EMAIL-FIRST INTAKE</span>
+    </section>
+
+    <section className="intro-section">
+      <div className="section-index">01 <span>/</span> APPROACH</div>
+      <div className="intro-statement"><p className="eyebrow">NOT MORE NOISE</p><h2>Clarity is<br />a form of <i>relief.</i></h2></div>
+      <div className="intro-note"><p>Debt and credit matters rarely arrive as a neat list. Pacific Connect begins with the details that matter, then helps identify which route may fit your circumstances.</p><a href="#services">Explore the routes <span>↓</span></a></div>
+    </section>
+
+    <section className="services-section" id="services">
+      <div className="services-heading"><div className="section-index">02 <span>/</span> THE INDEX</div><h2>Where should<br />we <i>look?</i></h2><p>Six areas of assessment. One individual starting point.</p></div>
+      <div className="service-list">{services.map(([number, title, copy]) => <article className="service-row" key={number}><span className="service-number">{number}</span><h3>{title}</h3><p>{copy}</p><span className="row-mark" aria-hidden="true">↗</span></article>)}</div>
+    </section>
+
+    <section className="mediation-section">
+      <div className="mediation-figure"><span>UP TO</span><strong>50%</strong><small>conditional<br />assessment</small></div>
+      <div className="mediation-copy"><p className="eyebrow">03 <span>/</span> DEBT MEDIATION</p><h2>Less pressure<br />can begin with<br /><i>one conversation.</i></h2><p>Monthly debt repayments may be reduced by up to 50%, depending on your financial situation and the agreement reached with creditors.</p><p className="disclaimer">This is not guaranteed. Every matter is assessed individually, and outcomes depend on circumstances, documents, creditor requirements and applicable legal processes.</p></div>
+    </section>
+
+    <section className="process-section">
+      <div className="section-index">04 <span>/</span> HOW IT STARTS</div>
+      <div className="process-heading"><h2>A short email<br />is a <i>good start.</i></h2><p>You do not need to have the whole story perfectly arranged. Begin with the broad outline and Pacific Connect can explain the next step.</p></div>
+      <div className="process-steps"><div><span>01</span><h3>Tell us what is happening.</h3><p>Share the broad outline of your matter by email.</p></div><div><span>02</span><h3>Share what is relevant.</h3><p>Documents can be provided when they are requested.</p></div><div><span>03</span><h3>See the route clearly.</h3><p>Your situation is assessed individually and the available path is explained.</p></div></div>
+    </section>
+
+    <section className="closing-section" id="contact"><div className="closing-top"><p className="eyebrow">05 <span>/</span> START HERE</p><img src="/logo-wordmark-transparent.png" alt="Pacific Connect" /></div><div className="closing-main"><h2>Begin with<br /><i>an email.</i></h2><div><p>Tell us where you are, and we’ll help make the next step clearer.</p><a className="closing-action" href={intakeHref}>Email {email} <span>↗</span></a></div></div><div className="closing-bottom"><span>Pacific Connect / Private intake</span><a href="#top">Back to top ↑</a></div></section>
   </main>;
 }
