@@ -32,3 +32,6 @@ body { overflow-x:hidden; }
 .brand-lockup { width:150px; height:100px; }
 @media (max-width:560px) { .site-header { height:104px; } .brand-lockup { width:112px; height:90px; } .hero h1 { font-size:30px; line-height:1; } .hero-lede { font-size:14px; } }
 @media (max-width:560px) { .hero-copy { width:calc(100vw - 66px); } .hero-art { width:100%; } .hero-lede, .microcopy { max-width:100%; } }
+.brand-lockup { width:190px; height:62px; object-fit:cover; }
+.hero-art-mark img { object-fit:cover; object-position:center; }
+@media (max-width:560px) { .brand-lockup { width:145px; height:52px; } }
