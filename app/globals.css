@@ -20,3 +20,10 @@
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto; } .hero-copy,.hero-art,.service-card,.assessment-section { animation:none; } .primary-button,.lead-form button { transition:none; } }
 
 
+
+body { overflow-x:hidden; }
+@media (max-width:560px) { .site-header { min-width:0; padding-inline:16px; gap:12px; }.brand { min-width:0; }.brand-lockup { width:145px; height:52px; }.header-link { white-space:nowrap; font-size:10px; }.hero { overflow:hidden; }.hero-copy,.hero-art,.hero-lede { min-width:0; max-width:100%; }.hero h1 { font-size:clamp(40px,12vw,58px); overflow-wrap:anywhere; }.hero-art { width:100%; }.hero-art img { width:100%; } }
+
+@media (max-width:560px) { .hero { width:100%; padding-inline:22px; }.hero-copy { width:100%; }.hero h1 { width:100%; font-size:40px; letter-spacing:-.075em; }.hero-lede { width:100%; font-size:16px; }.header-link { font-size:0; }.header-link::after { content:'Email ↗'; font-size:10px; } }
+
+@media (max-width:560px) { .hero-copy, .hero h1, .hero-lede, .hero-art { max-width:calc(100vw - 44px); min-width:0; } }
